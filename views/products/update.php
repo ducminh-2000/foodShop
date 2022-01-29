@@ -4,59 +4,62 @@
         <label for="category_id">Chọn danh mục</label>
         <select name="category_id" class="form-control" id="category_id">
           <?php
-          foreach ($danhmucsachs as $danhmucsach):
+          foreach ($categories as $category):
             $selected = '';
-            if ($danhmucsach['id'] == $sach['category_id']) {
+            if ($category['id'] == $product['category_id']) {
               $selected = 'selected';
             }
-            if (isset($_POST['category_id']) && $danhmucsach['id'] == $_POST['category_id']) {
+            if (isset($_POST['category_id']) && $category['id'] == $_POST['category_id']) {
               $selected = 'selected';
             }
             ?>
-              <option value="<?php echo $danhmucsach['id'] ?>" <?php echo $selected; ?>>
-                <?php echo $danhmucsach['name'] ?>
+              <option value="<?php echo $category['id'] ?>" <?php echo $selected; ?>>
+                <?php echo $category['name'] ?>
               </option>
           <?php endforeach; ?>
         </select>
     </div>
     <div class="form-group">
-        <label for="name">Nhập tên sách</label>
-        <input type="text" name="name"
-               value="<?php echo isset($_POST['name']) ? $_POST['name'] : $sach['name'] ?>"
-               class="form-control" id="name"/>
+        <label for="title">Nhập tên sản phẩm</label>
+        <input type="text" name="title"
+               value="<?php echo isset($_POST['title']) ? $_POST['title'] : $product['title'] ?>"
+               class="form-control" id="title"/>
     </div>
     <div class="form-group">
         <label for="avatar">Ảnh đại diện</label>
         <input type="file" name="avatar" value="" class="form-control" id="avatar"/>
         <img src="#" id="img-preview" style="display: none" width="100" height="100"/>
-      <?php if (!empty($sach['avatar'])): ?>
-          <img height="80" src="assets/uploads/<?php echo $sach['avatar'] ?>"/>
+      <?php if (!empty($product['avatar'])): ?>
+          <img height="80" src="assets/uploads/<?php echo $product['avatar'] ?>"/>
       <?php endif; ?>
     </div>
     <div class="form-group">
-        <label for="quantity">Số lượng</label>
-        <input type="number" name="quantity"
-               value="<?php echo isset($_POST['quantity']) ? $_POST['quantity'] : $sach['quantity'] ?>"
-               class="form-control" id="quantity"/>
+        <label for="amount">Số lượng</label>
+        <input type="number" name=""
+               value="<?php echo isset($_POST['amount']) ? $_POST['amount'] : $product['amount'] ?>"
+               class="form-control" id="amount"/>
     </div>
     <div class="form-group">
-        <label for="xuatBan">Năm xuất bản</label>
-        <input type="number" name="xuatBan" value="<?php echo isset($_POST['xuatBan']) ? $_POST['xuatBan'] : $sach['xuatBan'] ?>"
-               class="form-control" id="xuatBan"/>
+        <label for="price">Đơn giá</label>
+        <input type="number" name="price" value="<?php echo isset($_POST['price']) ? $_POST['price'] : $product['price'] ?>"
+               class="form-control" id="price"/>
     </div>
     <div class="form-group">
-        <label for="author">Tác giả</label>
-        <input type="text" name="author"
-               value="<?php echo isset($_POST['author']) ? $_POST['author'] : $sach['author'] ?>"
-               class="form-control" id="author"/>
+        <label for="summary">Mô tả ngắn</label>
+        <input type="text" name="summary"
+               value="<?php echo isset($_POST['summary']) ? $_POST['summary'] : $product['summary'] ?>"
+               class="form-control" id="summary"/>
     </div>
     <div class="form-group">
-        <label for="description">Mô tả </label>
-        <textarea name="description" id="description"
-                  class="form-control"><?php echo isset($_POST['description']) ? $_POST['description'] : $sach['description'] ?></textarea>
+        <label for="content">Mô tả chi tiết</label>
+        <textarea name="content" id="content"
+                  class="form-control"><?php echo isset($_POST['content']) ? $_POST['content'] : $product['content'] ?></textarea>
+    <script>
+      CKEDITOR.replace('content');
+    </script>
     </div>
     <div class="form-group">
         <input type="submit" name="submit" value="Save" class="btn btn-primary"/>
-        <a href="index.php?controller=sach&action=index" class="btn btn-default">Back</a>
+        <a href="index.php?controller=product&action=index" class="btn btn-default">Back</a>
     </div>
 </form>
