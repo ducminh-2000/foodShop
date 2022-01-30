@@ -44,7 +44,7 @@ if (isset($_SESSION['user'])) {
             <p class="mb-1 mt-3 font-weight-semibold"><?php echo $_SESSION['user']['username']?></p>
             <p class="fw-light text-muted mb-0"><?php echo $_SESSION['user']['username']?></p>
           </div>
-          <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile </a>
+          <a class="dropdown-item" href="index.php?controller=user&action=detail&id=<? echo $_SESSION['user']['id'] ?>"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile </a>
           <a class="dropdown-item" href="index.php?controller=user&action=logout"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
         </div>
       </li>
