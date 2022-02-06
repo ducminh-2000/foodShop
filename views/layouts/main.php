@@ -76,6 +76,15 @@
     <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->
 </div>
+<style>
+  .pagination{
+    
+  }
+  .pagination li{
+    border: solid 1px black;
+    padding: 10px;
+  }
+</style>
 <!-- ./wrapper -->
 <script src="assets/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->

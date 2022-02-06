@@ -3,8 +3,8 @@
     <div class="container">
         <div class="row">
             <div class=" col-md-4 col-sm-4 col-xs-12">
-                <a class="info-contact" href="tel:0999999999">
-                    <i class="fas fa-phone-alt"></i> 0999999999
+                <a class="info-contact" href="tel:088888888888">
+                    <i class="fas fa-phone-alt"></i> 088888888888
                 </a>
                 <a class="info-contact" href="mailto:abc@gmail.com">
                     <i class="far fa-envelope"></i> abc@gmail.com

@@ -7,7 +7,7 @@ require_once 'helpers/Helper.php';
     <div class="product container">
       <?php if (!empty($products)): ?>
           <h1 class="post-list-title">
-              <a href="index.php?controller=product&action=showAll" class="link-category-item">Danh sách sản phẩm</a>
+              <a href="index.php?controller=product&action=index" class="link-category-item">Danh sách sản phẩm</a>
           </h1>
           <div class="link-secondary-wrap row">
             <?php foreach ($products AS $product):

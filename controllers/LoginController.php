@@ -99,7 +99,7 @@ class LoginController
                 //chú ý password khi lưu vào bảng users sẽ được mã hóa md5 trước khi lưu
                 //do đang sử dụng cơ chế mã hóa này cho quy trình login
                 $user_model->password = md5($password);
-                $user_model->roleId = 1;
+                $user_model->roleId = 2;
                 $is_insert = $user_model->insertRegister();
                 if ($is_insert) {
                     $_SESSION['success'] = 'Đăng ký thành công';
