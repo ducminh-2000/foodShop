@@ -26,7 +26,7 @@ class OrderDetail extends Model {
     $obj_select = $this->connection
             ->prepare("SELECT order_details.*, products.title as product, products.price as price FROM order_details
                       INNER JOIN products ON products.id = order_details.product_id
-                      Inner join orders on orders.id = order_details.order_id 
+                      where order_details.order_id = $id
                       ");
     $obj_select->execute();
     $orderDetail = $obj_select->fetchAll(PDO::FETCH_ASSOC);

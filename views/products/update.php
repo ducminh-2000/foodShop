@@ -35,7 +35,7 @@
     </div>
     <div class="form-group">
         <label for="amount">Số lượng</label>
-        <input type="number" name=""
+        <input type="number" name="amount"
                value="<?php echo isset($_POST['amount']) ? $_POST['amount'] : $product['amount'] ?>"
                class="form-control" id="amount"/>
     </div>
