@@ -309,7 +309,7 @@ class ProductController extends Controller
             ];
             //xử lý phân trang
             $pagination_model = new Pagination($params_pagination);
-            $pagination = $pagination_model->getPagination();
+            $pages = $pagination_model->getPagination();
             //get products
             $product_model = new Product();
             $products = $product_model->getProductInHomePage($params);
@@ -321,7 +321,7 @@ class ProductController extends Controller
             $this->content = $this->render('views/products/index_home.php', [
               'products' => $products,
               'categories' => $categories,
-              'pagination' => $pagination,
+              'pages' => $pages,
             ]);
         
             require_once 'views/layouts/main_home.php';
